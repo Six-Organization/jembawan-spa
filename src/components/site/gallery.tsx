@@ -34,20 +34,32 @@ export function Gallery() {
             </p>
           </div>
 
-          {/* Placeholder tiles */}
+          {/* Real photos where available, gradient placeholders otherwise */}
           {galleryTiles.map((tile) => (
             <div
               key={tile.label.en}
               className="group relative overflow-hidden rounded-2xl border border-border/60 shadow-sm"
             >
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  backgroundImage: `linear-gradient(135deg, hsl(${tile.from}), hsl(${tile.to}))`,
-                }}
-              />
+              {tile.src ? (
+                <Image
+                  src={tile.src}
+                  alt={pick(tile.label)}
+                  fill
+                  sizes="(min-width: 640px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <>
+                  <div
+                    className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, hsl(${tile.from}), hsl(${tile.to}))`,
+                    }}
+                  />
+                  <ImageIcon className="absolute right-3 top-3 size-4 text-cream/60" />
+                </>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-forest/45 to-transparent" />
-              <ImageIcon className="absolute right-3 top-3 size-4 text-cream/60" />
               <p className="absolute bottom-3 left-4 font-heading text-sm font-semibold text-cream drop-shadow sm:text-base">
                 {pick(tile.label)}
               </p>

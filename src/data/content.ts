@@ -46,11 +46,13 @@ export const experience: { icon: string; label: Localized }[] = [
   { icon: "Footprints", label: { en: "Walk-ins Welcome", id: "Tanpa Reservasi Boleh" } },
 ];
 
-export const galleryTiles: { label: Localized; from: string; to: string }[] = [
-  { label: { en: "Massage Room", id: "Ruang Pijat" }, from: "160 30% 40%", to: "160 30% 20%" },
+export type GalleryItem = { label: Localized; src?: string; from?: string; to?: string };
+
+export const galleryTiles: GalleryItem[] = [
+  { label: { en: "Massage Room", id: "Ruang Pijat" }, src: "/spa/room.webp" },
+  { label: { en: "Treatment Beds", id: "Ranjang Pijat" }, src: "/spa/beds.webp" },
+  { label: { en: "Natural Massage Oils", id: "Minyak Pijat Alami" }, src: "/spa/oils.webp" },
   { label: { en: "Flower Bath", id: "Mandi Bunga" }, from: "18 46% 60%", to: "340 30% 45%" },
-  { label: { en: "Herbal Tea", id: "Teh Herbal" }, from: "36 52% 62%", to: "34 45% 42%" },
-  { label: { en: "Reflexology", id: "Refleksi" }, from: "140 26% 55%", to: "140 26% 30%" },
   { label: { en: "Balinese Garden", id: "Taman Bali" }, from: "120 25% 55%", to: "150 30% 28%" },
 ];
 
