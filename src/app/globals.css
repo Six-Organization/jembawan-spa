@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Calming spa — warm cream + deep eucalyptus green + bronze gold.
+     HSL channels for broad browser support (iOS 15 / older Safari). */
+  --background: 44 38% 97%;
+  --foreground: 158 20% 15%;
+  --card: 44 50% 99%;
+  --card-foreground: 158 20% 15%;
+  --popover: 44 50% 99%;
+  --popover-foreground: 158 20% 15%;
+  --primary: 160 30% 24%;
+  --primary-foreground: 44 38% 97%;
+  --secondary: 110 20% 91%;
+  --secondary-foreground: 160 24% 22%;
+  --muted: 60 16% 93%;
+  --muted-foreground: 158 8% 42%;
+  --accent: 110 24% 88%;
+  --accent-foreground: 160 24% 22%;
+  --destructive: 357 70% 45%;
+  --destructive-foreground: 44 38% 97%;
+  --border: 100 14% 85%;
+  --input: 100 14% 85%;
+  --ring: 160 30% 24%;
+
+  /* Brand */
+  --gold: 36 52% 56%;
+  --gold-foreground: 158 20% 15%;
+  --sage: 140 26% 48%;
+  --clay: 18 46% 54%;
+  --cream: 44 38% 97%;
+  --forest: 158 20% 15%;
+
+  --radius: 0.9rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
